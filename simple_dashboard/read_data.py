@@ -6,8 +6,8 @@ def read_olympics_data(url):
     # data cleaning
     df = df[13:-3] # use slicing to select rows
     df["Year"] = df["Games"].str[:4] # use to select character from a column
-    df["Year"] == df["Year"].astype(int)
-    df["Total"] == df["Total"].astype(int)
+    df["Year"] = df["Year"].astype(int)
+    df["Total"] = df["Total"].astype(int)
     df = df[["Year", "Total"]] # select subset of columns
 
     return df

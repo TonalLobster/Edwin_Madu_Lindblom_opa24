@@ -32,8 +32,11 @@ else:
 
 
 st.dataframe(filtered_df.reset_index (drop = True))
+
+
 ## Three graphs
 st.write("### Graphs by different libraries")
+
 # by matplotlib
 st.write("#### Matplotlib")
 fig, ax = plt.subplots()
@@ -43,11 +46,12 @@ ax.set_ylabel('Total Medals')
 ax.legend()
 plt.xticks(rotation=45)
 st.pyplot(fig)
+
 # by plotly_express
-st.write("#### Plotly Express")
 st.write("#### Plotly Express")
 fig2 = px.bar(df, x="Year", y="Total", labels={'Total': 'Total Medals'})
 st.plotly_chart(fig2)
+
 # by streamlit native  graph(built in graph)
 st.write("#### Streamlit")
 st.bar_chart(df.set_index("Year")["Total"])
